@@ -1,5 +1,5 @@
 {% set name = "asyncio-helpers" %}
-{% set version = "0.2.1" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/sci-bots/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: ee1c3b674fb58b3362c886290601007f08ef11db4119688d80771ec0cc0ec696
+  sha256: 3288ac1535b0f7803eec036f72ca899722b8bed6ff07f319d8dbb2665cfe3427
 
 build:
   noarch: python
