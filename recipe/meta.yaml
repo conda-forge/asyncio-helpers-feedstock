@@ -10,8 +10,9 @@ source:
   sha256: c5ace2e0c17651f6d378e5231fcc1b3408717b95b29ef7cc10445253679cb246
 
 build:
-  noarch: python
-  number: 0
+  entry_points:
+    - trollius-to-async = asyncio_helpers.trollius_to_async:main
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
@@ -20,8 +21,8 @@ requirements:
     - pip
   run:
     - logging-helpers
-    - python >=2.7,<3.7
-    - trollius
+    - python >=2.7
+    - trollius  # [py<35]
 
 test:
   imports:
