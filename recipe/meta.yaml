@@ -13,6 +13,7 @@ build:
   entry_points:
     - trollius-to-async = asyncio_helpers.trollius_to_async:main
   number: 2
+  noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
