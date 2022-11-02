@@ -12,17 +12,17 @@ source:
 build:
   entry_points:
     - trollius-to-async = asyncio_helpers.trollius_to_async:main
-  number: 1
+  number: 2
+  noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
     - logging-helpers
-    - python >=2.7
-    - trollius  # [py<35]
+    - python >=3.6
 
 test:
   imports:
@@ -31,7 +31,6 @@ test:
 about:
   home: http://github.com/sci-bots/{{ name }}
   license: BSD-3-Clause
-  license_family: BSD
   license_file: LICENSE.md
   summary: 'Helper functions, etc. for asyncio development'
 
