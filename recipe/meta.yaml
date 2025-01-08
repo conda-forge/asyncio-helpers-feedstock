@@ -12,19 +12,21 @@ source:
 build:
   entry_points:
     - trollius-to-async = asyncio_helpers.trollius_to_async:main
-  number: 2
+  number: 3
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
     - logging-helpers
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - asyncio_helpers
 
